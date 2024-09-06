@@ -10,7 +10,7 @@ import webbrowser
 from loguru import logger
 from typing import List
 from collections import OrderedDict
-from czsc.enum import Mark, Direction
+from czsc.cenum import Mark, Direction
 from czsc.objects import BI, FX, RawBar, NewBar
 from czsc.utils.echarts_plot import kline_pro
 from czsc import envs

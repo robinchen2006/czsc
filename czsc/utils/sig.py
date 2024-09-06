@@ -9,7 +9,7 @@ import numpy as np
 from deprecated import deprecated
 from collections import Counter, OrderedDict
 from typing import List, Any, Dict, Union, Tuple
-from czsc.enum import Direction
+from czsc.cenum import Direction
 from czsc.objects import BI, RawBar, ZS, Signal
 
 

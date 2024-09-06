@@ -55,7 +55,7 @@ Subpackages
    :no-main-docstr:
    :no-inheritance-diagram:
 
-.. automodapi:: czsc.enum
+.. automodapi:: czsc.cenum
    :members:
    :undoc-members:
    :no-main-docstr:
