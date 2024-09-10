@@ -124,8 +124,8 @@ class Strategy(czsc.CzscStrategyBase):
         pos_list = [
             # create_long_short_V230908(self.symbol),
             create_long_short_V230909(self.symbol, base_freq='30分钟'),
-            create_long_short_V230909(self.symbol, base_freq='60分钟'),
-            create_long_short_V230909(self.symbol, base_freq='日线'),
+            # create_long_short_V230909(self.symbol, base_freq='60分钟'),
+            # create_long_short_V230909(self.symbol, base_freq='日线'),
         ]
         return pos_list
 
@@ -135,7 +135,7 @@ if __name__ == '__main__':
     logger.add(results_path / "czsc.log", rotation="1 week", encoding="utf-8")
     results_path.mkdir(exist_ok=True, parents=True)
 
-    symbols = research.get_symbols('中证500成分股')[:30]
+    symbols = research.get_symbols('自选股')[:3]
     symbol = symbols[0]
     tactic = Strategy(symbol=symbol, is_stocks=True)
 
@@ -144,8 +144,8 @@ if __name__ == '__main__':
     logger.info(f"信号函数配置列表：{tactic.signals_config}")
 
     # replay 查看策略的编写是否正确，执行过程是否符合预期
-    bars = research.get_raw_bars(symbol, freq=tactic.base_freq, sdt='20150101', edt='20220101')
-    trader = tactic.replay(bars, sdt='20210101', res_path=results_path / "replay", refresh=True)
+    bars = research.get_raw_bars(symbol, freq=tactic.base_freq, sdt='20240101', edt='20240905')
+    trader = tactic.replay(bars, sdt='20240101', res_path=results_path / "replay", refresh=True)
 
     # 当策略执行过程符合预期后，将持仓策略保存到本地 json 文件中
     tactic.save_positions(results_path / "positions")
