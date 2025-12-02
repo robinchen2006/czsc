@@ -133,7 +133,7 @@ class Strategy(czsc.CzscStrategyBase):
 
 
 if __name__ == '__main__':
-    results_path = Path(r'D:\策略研究\笔非多即空')
+    results_path = Path(r'C:\策略研究\笔非多即空')
     results_path.mkdir(exist_ok=True, parents=True)
     logger.add(results_path / "czsc.log", rotation="1 week", encoding="utf-8")
 
